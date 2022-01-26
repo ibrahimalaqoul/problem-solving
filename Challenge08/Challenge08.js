@@ -27,7 +27,12 @@
 // -------------------------------------------------------------------------------------------------------
 
 const customerAndAge = (obj) => {
-  Array.obj
+    obj = {customerName : "Romio Joliat", Age : 35,customerName: "Mario Ristrova", Age : 39,customerName : "Sofia firnando" , Age : 50};
+
+    for (const property in obj) {
+      console.log(`${property}: ${obj[property]}`);
+    }
+  
 };
 
 // -------------------------------------------------------------------------------------------------------
