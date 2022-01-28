@@ -137,32 +137,33 @@ const cvFormatter = (arr) => {
 // ------------------------
 const applicationsStatics = (arr) => {
     let rejectedApplicants;
-  let result ={
-     python_Devs: 0,
-     javaScript_Devs: 0,
-     dotNet_Devs: 0,
-     java_Devs: 0,
-     totalApplicants: 0,
-     rejectedApplicants: 0,
+    let result = {
+        python_Devs: 0,
+        javaScript_Devs: 0,
+        dotNet_Devs: 0,
+        java_Devs: 0,
+        totalApplicants: 0,
+        rejectedApplicants: 0,
     }
     for (let i = 0; i < arr.length; i++) {
         if ((arr[i].firstName == null || arr[i].firstName == "" || arr[i].lastName == null || arr[i].lastName == "" ) && arr[i].yearsOfExperience < i){
                       result.rejectedApplicants++;
+
         } if (arr[i].tech == "Python") {
             result.python_Devs++;
         }
-         if (arr[i].tech == "Java") {
+        if (arr[i].tech == "Java") {
             result.java_Devs++;
         }
         if (arr[i].tech == "Js") {
             result.javaScript_Devs++;
         }
         if (arr[i].tech == ".Net") {
-             result.dotNet_Devs++;
+            result.dotNet_Devs++;
         }
-        }
-        return result;
-    };
+    }
+    return result;
+};
 
 // 4) ---------------------
 //
@@ -294,8 +295,8 @@ let data = {
                 sum = sum+data.grades[i].classes[j].classScores[k]; 
             }
           data.grades[i].classes[j].avg= Math.floor(sum/ data.grades[i].classes[j].classScores.length);
-
         }
     }return data;
 }
+
 module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
