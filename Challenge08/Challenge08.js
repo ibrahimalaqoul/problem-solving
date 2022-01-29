@@ -59,7 +59,10 @@ const customerAndAge = (obj) => {
 // -------------------------------------------------------------------------------------------------------
 
 const getEntries = (obj) => {
-  // write your code here
+  let myArray=[];
+  for (const [key, value] of Object.entries(obj)) {
+    myArray.push(`${key}: ${value}`);
+  } return myArray;
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -100,7 +103,12 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-  // write your code here
+  for (let i = 0; i < arr.length; i++) {
+    coursesName.push(arr[i].course);
+    for (let j = 0; j < arr[i].Students.length; j++) {
+      studentsName.push(arr[i].Students[j].Students)
+    } 
+  }
 
   return { coursesName, studentsName };
 };
@@ -124,8 +132,21 @@ const getInfo = (arr) => {
 //  ------------------------------------------------------------------------------------------------------
 
 const getStudents = (arr) => {
-  // write your code here
+  let myArray=[];
+  let resultObj={
+   Student : "",
+   course: "",
+  }
+for (let i = 0; i < arr.length; i++) {
 
+  for (let j = 0; j < arr[i].Students.length; j++) {
+    resultObj.Student = arr[i].Student[j];
+    resultObj.course = arr[i].course ;
+    myArray.push(obj);
+  }
+  
+}
+return myArray;
 };
 
 module.exports = {
