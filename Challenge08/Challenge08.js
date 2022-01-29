@@ -142,7 +142,7 @@ for (const myArray of arr) {
         // resultObj.push(my3Array);
         // resultObj.push(courses.course)
         resultObj.push({Student:my3Array,course:my2Array.course})
-      } else console.log("errrrrrr");
+      } else console.log("error");
     }
     
   } 
