@@ -103,11 +103,11 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-  for (let i = 0; i < arr.length; i++) {
-    coursesName.push(arr[i].course);
-    for (let j = 0; j < arr[i].Students.length; j++) {
-      studentsName.push(arr[i].Students[j].Students)
-    } 
+  for (const courseArray of arr) {
+    coursesName.push(courseArray.course);
+    for (const stuArray of courseArray.Students) {
+      studentsName.push(stuArray)
+    }
   }
 
   return { coursesName, studentsName };
@@ -132,21 +132,23 @@ const getInfo = (arr) => {
 //  ------------------------------------------------------------------------------------------------------
 
 const getStudents = (arr) => {
-  let myArray=[];
-  let resultObj={
-   Student : "",
-   course: "",
-  }
-for (let i = 0; i < arr.length; i++) {
+  let resultObj=[];
 
-  for (let j = 0; j < arr[i].Students.length; j++) {
-    resultObj.Student = arr[i].Student[j];
-    resultObj.course = arr[i].course ;
-    myArray.push(obj);
-  }
-  
+for (const myArray of arr) {
+  for (const my2Array of courses) {
+    for (const my3Array of my2Array.Students ) {
+          if (myArray == my3Array) {
+            console.log(my3Array);
+        // resultObj.push(my3Array);
+        // resultObj.push(courses.course)
+        resultObj.push({Student:my3Array,course:my2Array.course})
+      } else console.log("errrrrrr");
+    }
+    
+  } 
 }
-return myArray;
+
+return resultObj;
 };
 
 module.exports = {
