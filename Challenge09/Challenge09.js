@@ -112,12 +112,12 @@ const employeesBonus = (arr) => {
     arr.forEach(element => {
         let salary = element.salary;
         if (element.workHours > 8) {
-            newSal = parseFloat(salary.replace(/\$|,/g, ''))+100;   
+            newSal = parseInt(salary.slice(0,salary.length-1))+100+"$";   
         }
         if (element.workHours <= 8) {
-            newSal = parseFloat(salary.replace(/\$|,/g,''))+50;
+            newSal = parseInt(salary.slice(0,salary.length-1))+50+"$";
         } 
-        element.salary = newSal +"$";
+        
         }
     ); return arr;
 }
